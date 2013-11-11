@@ -1,0 +1,65 @@
+.grid {
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+    float: left;
+
+}
+
+.board {
+    border: 1px solid black;
+    width: 553px;
+    height: 553px;
+    background-image: url(/images/bamboo.jpg);
+    position: absolute;
+}
+
+.stone-black {
+    /*
+     *margin: auto;
+     */
+    /*
+     *border: 1px;
+     */
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    /*
+     * background-color: black;
+     */
+
+    background-image: url(/images/stone-black.png);
+    background-size: 46px 46px;
+    background-repeat: no-repeat;
+    /*
+     * float: left;
+     */
+}
+
+.stone-white {
+    /*
+     *margin: auto;
+     */
+    /*
+     *border: 1px;
+     */
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    border-radius: 50%;
+    width: 46px;
+    height: 46px;
+    /*
+     * background-color: black;
+     */
+
+    background-image: url(/images/stone-white.png);
+    background-size: 46px 46px;
+    background-repeat: no-repeat;
+    /*
+     * float: left;
+     */
+}
