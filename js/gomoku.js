@@ -42,6 +42,7 @@ $('.grid').click(function() {
 });
 
 function checkWinner(x, y, X2Y, player) {
+ 
     /*
      * Checking for vertical win
      */
@@ -81,6 +82,7 @@ function checkWinner(x, y, X2Y, player) {
     
     if (vertical_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + vertical_adjacent_ct);
+        return;
     }
 
     /*
@@ -122,8 +124,100 @@ function checkWinner(x, y, X2Y, player) {
     
     if (horizontal_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + horizontal_adjacent_ct);
+        return;
     }
 
+    /*
+     * Checking for diagonal descending win
+     */
+    var descending_adjacent_ct = 0;
+    
+    var tmpY = y;
+    for (var i = x + 1; i < x + 5; i++) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        console.log('Checking [' + i + '][' + (tmpY+1) + ']');
+        if (X2Y[i][++tmpY] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + tmpY +')');
+            descending_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
 
+    var tmpY = y;
+    for (var i = x - 1; i > x - 5; i--) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        console.log('Checking [' + i + '][' + (tmpY-1) + ']');
+        if (X2Y[i][--tmpY] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + tmpY +')');
+            descending_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
+    
+    if (descending_adjacent_ct == 4) {
+        console.log(player + ' wins, adjacent_count: ' + descending_adjacent_ct);
+        return;
+    }
 
+    /*
+     * Checking for diagonal descending win
+     */
+    var ascending_adjacent_ct = 0;
+    
+    var tmpY = y;
+    for (var i = x + 1; i < x + 5; i++) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        console.log('Checking [' + i + '][' + (tmpY-1) + ']');
+        if (X2Y[i][--tmpY] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + tmpY +')');
+            ascending_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
+
+    var tmpY = y;
+    for (var i = x - 1; i > x - 5; i--) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        console.log('Checking [' + i + '][' + (tmpY+1) + ']');
+        if (X2Y[i][++tmpY] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + tmpY +')');
+            ascending_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
+    
+    if (ascending_adjacent_ct == 4) {
+        console.log(player + ' wins, adjacent_count: ' + ascending_adjacent_ct);
+        return;
+    }
+
+    
 }
