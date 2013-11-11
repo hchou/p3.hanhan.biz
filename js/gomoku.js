@@ -26,14 +26,13 @@ $('.grid').click(function() {
             // Storing black stone positions in array
             blackX2Y[x][y] = 1;
             // Check vertical win for Black player
-            checkWinner(x, y, blackX2Y);
+            checkWinner(x, y, blackX2Y, 'Black');
         } else {
             $(this).append(whiteDiv);
             // Storing white stone positions in array
             whiteX2Y[x][y] = 1;
-            console.log('whiteX2Y[x][y]: ' + whiteX2Y[x][y]);
             // Check vertical win for White player
-            checkWinner(x, y, whiteX2Y);
+            checkWinner(x, y, whiteX2Y, 'White');
         }
         turnCnt++;
 
@@ -42,24 +41,23 @@ $('.grid').click(function() {
 
 });
 
-function checkWinner(x, y, X2Y) {
-    var adjacent_count = 0;
+function checkWinner(x, y, X2Y, player) {
+    /*
+     * Checking for vertical win
+     */
+    var vertical_adjacent_ct = 0;
+    
     for (var i = y + 1; i < y + 5; i++) {
         if (i > 11) {
             console.log('out of bound');
             break;
         }
-        //console.log('checking x=' + x + ' y=' + i);
-        //console.log(X2Y[x][i]);
-        //if (typeof X2Y[x] != 'undefined' && X2Y[x] == i) {
-        //if (typeof X2Y[x][i] != 'undefined') {
-            //console.log('X2Y[' + x + '] = ' + X2Y[x]);
-            if (X2Y[x][i] == 1) {
-                console.log('ADJACENT STONE (' + x + ',' + i +')');
-                adjacent_count++;
-            }
-            //console.log('adjacent vertical ' + color + ' stone');
-        //}
+        if (X2Y[x][i] == 1) {
+            console.log('ADJACENT STONE (' + x + ',' + i +')');
+            vertical_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
         else {
             break;
         }
@@ -70,23 +68,62 @@ function checkWinner(x, y, X2Y) {
             console.log('out of bound');
             break;
         }
-        //console.log('checking x=' + x + ' y=' + i);
-        //console.log(X2Y[x][i]);
-        //if (typeof X2Y[x] != 'undefined' && X2Y[x] == i) {
-        //if (typeof X2Y[x][i] != 'undefined') {
-            //console.log('X2Y[' + x + '] = ' + X2Y[x]);
-            if (X2Y[x][i] == 1) {
-                console.log('ADJACENT STONE (' + x + ',' + i +')');
-                adjacent_count++;
-            }
-            //console.log('adjacent vertical ' + color + ' stone');
-        //}
+        if (X2Y[x][i] == 1) {
+            console.log('ADJACENT STONE (' + x + ',' + i +')');
+            vertical_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
         else {
             break;
         }
     }
     
-    if (adjacent_count == 4) {
-        console.log('SOMEBODY WON, adjacent_count: ' + adjacent_count);
+    if (vertical_adjacent_ct == 4) {
+        console.log(player + ' wins, adjacent_count: ' + vertical_adjacent_ct);
     }
+
+    /*
+     * Checking for horizontal win
+     */
+    var horizontal_adjacent_ct = 0;
+    
+    for (var i = x + 1; i < x + 5; i++) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        if (X2Y[i][y] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + y +')');
+            horizontal_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
+
+    for (var i = x - 1; i > x - 5; i--) {
+        if (i > 11) {
+            console.log('out of bound');
+            break;
+        }
+        if (X2Y[i][y] == 1) {
+            console.log('ADJACENT STONE (' + i + ',' + y +')');
+            horizontal_adjacent_ct++;
+        }
+        // If no stone or a stone of opposite color in adjacent grid
+        // break out of loop
+        else {
+            break;
+        }
+    }
+    
+    if (horizontal_adjacent_ct == 4) {
+        console.log(player + ' wins, adjacent_count: ' + horizontal_adjacent_ct);
+    }
+
+
+
 }
