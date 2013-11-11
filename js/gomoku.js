@@ -1,3 +1,4 @@
+// Arrays to store X,Y positions of Black and White stones
 var whiteX = new Array();
 var whiteY = new Array();
 var blackX = new Array();
