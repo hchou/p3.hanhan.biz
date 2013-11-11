@@ -19,7 +19,7 @@
         border: 1px solid black;
         width:553px;
         height:553px;
-        background-image: url(../img/bamboo2.jpg);
+        background-image: url(/images/bamboo.jpg);
         position: absolute;
     }
     
@@ -27,12 +27,22 @@
         /*
          *margin: auto;
          */
-        border: 1px solid black;
+        /*
+         *border: 1px;
+         */
+        position: absolute;
+        margin-top: 1px;
+        margin-left: 1px;
         border-radius: 50%;
         width: 46px;
         height: 46px;
-        background-color: black;
-        position: absolute;
+        /*
+         * background-color: black;
+         */
+
+        background-image: url(/images/stone-black.png);
+        background-size: 46px 46px;
+        background-repeat:no-repeat;
         /*
          * float: left;
          */
@@ -42,12 +52,22 @@
         /*
          *margin: auto;
          */
-        border: 1px solid black;
+        /*
+         *border: 1px;
+         */
+        position: absolute;
+        margin-top: 1px;
+        margin-left: 1px;
         border-radius: 50%;
         width: 46px;
         height: 46px;
-        background-color: white;
-        position: absolute;
+        /*
+         * background-color: black;
+         */
+
+        background-image: url(/images/stone-white.png);
+        background-size: 46px 46px;
+        background-repeat:no-repeat;
         /*
          * float: left;
          */
