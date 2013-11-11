@@ -5,7 +5,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/gomoku.css">
 
-    <title>Class Practice</title>
+    <title>Gomoku</title>
 
     <script>
         var turnCnt = 0;
