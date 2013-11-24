@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <!-- jquery & jquery ui-->
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+<body onload="newGame()">
     
 <?php
     $grids = "";
@@ -29,9 +31,18 @@
 <?=$grids?>
 </div>
 
-
 <script src="/js/gomoku.js"></script>
 
+<div id="dialog-form" title="Start a New Game">
+<form>
+<fieldset>
+<label for="nameBlack">Black Stone Player Name</label>
+<input type="text" name="nameBlack" id="nameBlack" value="" class="text ui-widget-content ui-corner-all" />
+<label for="nameWhite">White Stone Player Name</label>
+<input type="text" name="nameWhite" id="nameWhite" value="" class="text ui-widget-content ui-corner-all" />
+</fieldset>
+</form>
+</div>
 
 </body>
 </html>
