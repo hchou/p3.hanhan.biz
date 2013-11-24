@@ -5,6 +5,7 @@
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/gomoku.css">
+    <script src="/js/game_new.js"></script>
 
     <title>Gomoku</title>
 
@@ -14,7 +15,6 @@
    
 </head>
 
-<body>
 <body onload="newGame()">
     
 <?php
@@ -27,19 +27,28 @@
 ?>
 
 <!-- Displaying the Go board -->
-<div class='board'>
-<?=$grids?>
+<div class='game-box'>
+    <div class='board'>
+        <?=$grids?>
+    </div>
+
+    <div class='player-info'>
+        Black:<br>
+        <span id='bplayer'></span><br>
+        White:<br>
+        <span id='wplayer'></span><br>
+    </div>
 </div>
 
-<script src="/js/gomoku.js"></script>
+<script src="/js/game_turn.js"></script>
 
 <div id="dialog-form" title="Start a New Game">
 <form>
 <fieldset>
-<label for="nameBlack">Black Stone Player Name</label>
-<input type="text" name="nameBlack" id="nameBlack" value="" class="text ui-widget-content ui-corner-all" />
-<label for="nameWhite">White Stone Player Name</label>
-<input type="text" name="nameWhite" id="nameWhite" value="" class="text ui-widget-content ui-corner-all" />
+<label for="nameBlack">Black Stone Player Name</label><br>
+<input type="text" name="nameBlack" id="nameBlack" value="" class="text ui-widget-content ui-corner-all" /><br>
+<label for="nameWhite">White Stone Player Name</label><br>
+<input type="text" name="nameWhite" id="nameWhite" value="" class="text ui-widget-content ui-corner-all" /><br>
 </fieldset>
 </form>
 </div>
