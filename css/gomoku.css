@@ -40,3 +40,22 @@
     background-size: 46px 46px;
     background-repeat: no-repeat;
 }
+
+.game-box {
+    width: 800px;
+    height: 553px;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.player-info {
+    float: right;
+    overflow: auto;
+    width: 150px;
+    height: 553px;
+    background-color: yellow;
+}
