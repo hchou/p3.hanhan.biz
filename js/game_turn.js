@@ -10,6 +10,8 @@ for (var i = 0; i <= 11; i++) {
 var whiteDiv = '<div class="stone-white"></div>';
 var blackDiv = '<div class="stone-black"></div>';
 
+$("#cplayer").html(blackDiv);
+
 $('.grid').click(function() {
 
     // If the box isn't already occupied by a white or black stone then proceed
@@ -17,6 +19,7 @@ $('.grid').click(function() {
         var position = $(this).position();
         var x = Math.round(position.left / 50 + 1);
         var y = Math.round(position.top / 50 + 1);
+        var currentPlayer;
         console.log('turn: ' + (turnCnt + 1));
         console.log('x: ' + x);
         console.log('y: ' + y);
@@ -25,12 +28,18 @@ $('.grid').click(function() {
             $(this).append(blackDiv);
             // Storing black stone positions in array
             blackX2Y[x][y] = 1;
+            
+            $("#cplayer").html(whiteDiv);
+            
             // Check vertical win for Black player
             checkWinner(x, y, blackX2Y, 'Black');
         } else {
             $(this).append(whiteDiv);
             // Storing white stone positions in array
             whiteX2Y[x][y] = 1;
+            
+            $("#cplayer").html(blackDiv);
+            
             // Check vertical win for White player
             checkWinner(x, y, whiteX2Y, 'White');
         }
