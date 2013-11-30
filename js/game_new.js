@@ -8,13 +8,8 @@ $(function() {
         modal: true,
         buttons: {
             "Start": function() {
-                    //$("#users tbody").append("<tr>" +
-                    //    "<td>" + name.val() + "</td>" +
-                    //    "<td>" + email.val() + "</td>" +
-                    //    "<td>" + password.val() + "</td>" +
-                    //    "</tr>");
-                    var bplayer = $("#nameBlack").val();
-                    var wplayer = $("#nameWhite").val();
+                    var bplayer = $("#namePlayer1").val();
+                    var wplayer = $("#namePlayer2").val();
                     $(this).dialog("close");
                     $("#bplayer").html(bplayer);
                     $("#wplayer").html(wplayer);
@@ -23,23 +18,20 @@ $(function() {
     });
     $("#playagain-form").dialog({
         autoOpen: false,
-        height: 150,
+        height: 300,
         width: 300,
         modal: true,
         buttons: {
             "Rematch": function() {
                 $(this).dialog("close");
                 rematchFlag = 1;
-                alert('rematchFlag:' + rematchFlag);
-                blackX2Y = [];
-                whiteX2Y = [];
                 $(".stone-black").remove();
                 $(".stone-white").remove();
+                resetBoard();
             },
             "New Game": function() {
                 $(this).dialog("close");
                 rematchFlag = 0;
-                alert('rematchFlag:' + rematchFlag);
                 location.reload();
             }
         },
@@ -47,7 +39,6 @@ $(function() {
 });
 
 function newGame() {
-    alert('rematchFlag: ' + rematchFlag);
     $("#newgame-form").dialog("open");
 }
 
