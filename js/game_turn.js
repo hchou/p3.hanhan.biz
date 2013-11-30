@@ -1,17 +1,12 @@
 // Arrays to store X,Y positions of Black and White stones
 var whiteX2Y = new Array;
-for (var i = 0; i <= 11; i++) {
-    whiteX2Y[i] = [];
-}
 var blackX2Y = new Array;
-for (var i = 0; i <= 11; i++) {
-    blackX2Y[i] = [];
-}
 var whiteDiv = '<div class="stone-white"></div>';
 var blackDiv = '<div class="stone-black"></div>';
-var turnCnt = 0;
 
-$("#cplayer").html(blackDiv);
+// Reset board to prepare for initial game
+resetBoard();
+
 
 $('.grid').click(function() {
 
@@ -237,16 +232,20 @@ function checkWinner(x, y, X2Y, player) {
 
 function resetBoard() {
 
+    // Initialize the white moves/turns array
     for (var i = 0; i <= 11; i++) {
         whiteX2Y[i] = [];
     }
-
+    
+    // Initialize the black moves/turns array
     for (var i = 0; i <= 11; i++) {
         blackX2Y[i] = [];
     }
 
+    // Reset turn to 0
     turnCnt = 0;
-    
-    //$("#cplayer").html(blackDiv);    
+
+    // Show current player stone (black always goes first)
+    $("#cplayer").html(blackDiv);    
 
 }
