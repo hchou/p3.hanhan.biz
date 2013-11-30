@@ -59,6 +59,10 @@
     height: 553px;
 }
 
+.no-close .ui-dialog-titlebar-close {
+    display: none;
+}
+
 #bplayer {
     width: 150px;
     background-color: black;
