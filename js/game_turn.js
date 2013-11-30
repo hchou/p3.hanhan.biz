@@ -91,6 +91,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (vertical_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + vertical_adjacent_ct);
+        playAgain();
         return;
     }
 
@@ -133,11 +134,12 @@ function checkWinner(x, y, X2Y, player) {
 
     if (horizontal_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + horizontal_adjacent_ct);
+        playAgain();
         return;
     }
 
     /*
-     * Checking for diagonal descending win
+     * Checking for diagonal descending slope win
      */
     var descending_adjacent_ct = 0;
 
@@ -179,11 +181,12 @@ function checkWinner(x, y, X2Y, player) {
 
     if (descending_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + descending_adjacent_ct);
+        playAgain();
         return;
     }
 
     /*
-     * Checking for diagonal descending win
+     * Checking for diagonal ascending slope win
      */
     var ascending_adjacent_ct = 0;
 
@@ -225,6 +228,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (ascending_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + ascending_adjacent_ct);
+        playAgain();
         return;
     }
 

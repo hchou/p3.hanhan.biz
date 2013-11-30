@@ -1,5 +1,7 @@
+var rematchFlag = 0;
+
 $(function() {
-    $("#dialog-form").dialog({
+    $("#newgame-form").dialog({
         autoOpen: false,
         height: 300,
         width: 300,
@@ -19,9 +21,36 @@ $(function() {
             },
         },
     });
-
+    $("#playagain-form").dialog({
+        autoOpen: false,
+        height: 150,
+        width: 300,
+        modal: true,
+        buttons: {
+            "Rematch": function() {
+                $(this).dialog("close");
+                rematchFlag = 1;
+                alert('rematchFlag:' + rematchFlag);
+                blackX2Y = [];
+                whiteX2Y = [];
+                $(".stone-black").remove();
+                $(".stone-white").remove();
+            },
+            "New Game": function() {
+                $(this).dialog("close");
+                rematchFlag = 0;
+                alert('rematchFlag:' + rematchFlag);
+                location.reload();
+            }
+        },
+    });
 });
 
 function newGame() {
-    $("#dialog-form").dialog("open");
+    alert('rematchFlag: ' + rematchFlag);
+    $("#newgame-form").dialog("open");
+}
+
+function playAgain() {
+    $("#playagain-form").dialog("open");
 }
