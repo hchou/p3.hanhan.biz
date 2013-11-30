@@ -3,6 +3,8 @@ var matchNumber = 1;
 $(function() {
     $("#newgame-form").dialog({
         autoOpen: false,
+        closeOnEscape: false,
+        dialogClass: 'no-close',
         height: 300,
         width: 300,
         modal: true,
@@ -18,23 +20,27 @@ $(function() {
     });
     $("#playagain-form").dialog({
         autoOpen: false,
+        closeOnEscape: false,
+        dialogClass: 'no-close',
         height: 300,
         width: 300,
         modal: true,
         buttons: {
             "Rematch": function() {
                 $(this).dialog("close");
-                // Clear all the stones on board
-                resetBoard();
                 // Increment matchNumber for a rematch
                 matchNumber++;
+                // Reset the board for a new match
+                resetBoard();
             },
             "New Game": function() {
                 $(this).dialog("close");
-                // Reload page
-                location.reload();
+                // Show newGame dialog
+                newGame();
                 // New game, reset matchNumber
                 matchNumber = 1;
+                // Reset the board for a new match
+                resetBoard();
             }
         },
     });
