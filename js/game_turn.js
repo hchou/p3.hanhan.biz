@@ -9,6 +9,7 @@ for (var i = 0; i <= 11; i++) {
 }
 var whiteDiv = '<div class="stone-white"></div>';
 var blackDiv = '<div class="stone-black"></div>';
+var turnCnt = 0;
 
 $("#cplayer").html(blackDiv);
 
@@ -231,5 +232,21 @@ function checkWinner(x, y, X2Y, player) {
         playAgain();
         return;
     }
+
+}
+
+function resetBoard() {
+
+    for (var i = 0; i <= 11; i++) {
+        whiteX2Y[i] = [];
+    }
+
+    for (var i = 0; i <= 11; i++) {
+        blackX2Y[i] = [];
+    }
+
+    turnCnt = 0;
+    
+    //$("#cplayer").html(blackDiv);    
 
 }
