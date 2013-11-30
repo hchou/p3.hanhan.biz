@@ -232,6 +232,10 @@ function checkWinner(x, y, X2Y, player) {
 
 function resetBoard() {
 
+    // Clear the stones off the game board
+    $(".stone-black").remove();
+    $(".stone-white").remove();
+
     // Initialize the white moves/turns array
     for (var i = 0; i <= 11; i++) {
         whiteX2Y[i] = [];

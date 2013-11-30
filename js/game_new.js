@@ -1,4 +1,4 @@
-var rematchFlag = 0;
+var matchNumber = 1;
 
 $(function() {
     $("#newgame-form").dialog({
@@ -24,15 +24,17 @@ $(function() {
         buttons: {
             "Rematch": function() {
                 $(this).dialog("close");
-                rematchFlag = 1;
-                $(".stone-black").remove();
-                $(".stone-white").remove();
+                // Clear all the stones on board
                 resetBoard();
+                // Increment matchNumber for a rematch
+                matchNumber++;
             },
             "New Game": function() {
                 $(this).dialog("close");
-                rematchFlag = 0;
+                // Reload page
                 location.reload();
+                // New game, reset matchNumber
+                matchNumber = 1;
             }
         },
     });
