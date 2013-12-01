@@ -33,24 +33,54 @@
     </div>
 
     <div class='player-info'>
-        Black:<br>
-        <span id='bplayer'></span><br>
-        White:<br>
-        <span id='wplayer'></span><br>
+        <table>
+            <tr>
+                <td>
+                    PLAYER
+                </td>
+                <td>
+                    WINS
+                </td>
+            </tr>
+            <tr id='player1Row' class='black'>
+                <td id='player1Name'>
+                    Player 1
+                </td>
+                <td id='player1Wins'>
+                    0
+                </td>
+            </tr>
+            <tr id='player2Row'>
+                <td id='player2Name'>
+                    Player 2
+                </td>
+                <td id='player2Wins'>
+                    0
+                </td>
+            </tr>
+        </table>
+        <br>
+        <span id='cplayer'>Black</span>
     </div>
 </div>
 
 <script src="/js/game_turn.js"></script>
 
-<div id="dialog-form" title="Start a New Game">
-<form>
-<fieldset>
-<label for="nameBlack">Black Stone Player Name</label><br>
-<input type="text" name="nameBlack" id="nameBlack" value="" class="text ui-widget-content ui-corner-all" /><br>
-<label for="nameWhite">White Stone Player Name</label><br>
-<input type="text" name="nameWhite" id="nameWhite" value="" class="text ui-widget-content ui-corner-all" /><br>
-</fieldset>
-</form>
+<div id="newgame-form" title="Start a New Game">
+    <form>
+        <fieldset>
+            <label for="namePlayer1">Player 1</label><br>
+            <input type="text" name="namePlayer1" id="namePlayer1" value="" class="text ui-widget-content ui-corner-all" /><br>
+            <label for="namePlayer2">Player 2</label><br>
+            <input type="text" name="namePlayer2" id="namePlayer2" value="" class="text ui-widget-content ui-corner-all" /><br>
+        </fieldset>
+    </form>
+</div>
+
+<div id="playagain-form">
+    <form>
+        Do you want a rematch or play a new game?<br>
+    </form>    
 </div>
 
 </body>
