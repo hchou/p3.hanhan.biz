@@ -7,7 +7,6 @@ var blackDiv = '<div class="stone-black"></div>';
 // Reset board to prepare for initial game
 resetBoard();
 
-
 $('.grid').click(function() {
 
     // If the box isn't already occupied by a white or black stone then proceed
@@ -87,7 +86,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (vertical_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + vertical_adjacent_ct);
-        playAgain();
+        playAgain(player);
         return;
     }
 
@@ -130,7 +129,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (horizontal_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + horizontal_adjacent_ct);
-        playAgain();
+        playAgain(player);
         return;
     }
 
@@ -177,7 +176,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (descending_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + descending_adjacent_ct);
-        playAgain();
+        playAgain(player);
         return;
     }
 
@@ -224,7 +223,7 @@ function checkWinner(x, y, X2Y, player) {
 
     if (ascending_adjacent_ct == 4) {
         console.log(player + ' wins, adjacent_count: ' + ascending_adjacent_ct);
-        playAgain();
+        playAgain(player);
         return;
     }
 

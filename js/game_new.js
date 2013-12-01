@@ -1,4 +1,6 @@
 var matchNumber = 1;
+var player1Wins = 0;
+var player2Wins = 0;
 
 $(function() {
     $("#newgame-form").dialog({
@@ -10,11 +12,14 @@ $(function() {
         modal: true,
         buttons: {
             "Start": function() {
-                    var bplayer = $("#namePlayer1").val();
-                    var wplayer = $("#namePlayer2").val();
+                    var namePlayer1 = $("#namePlayer1").val();
+                    var namePlayer2 = $("#namePlayer2").val();
+                    player1Wins = 0;
+                    player2Wins = 0;
                     $(this).dialog("close");
-                    $("#bplayer").html(bplayer);
-                    $("#wplayer").html(wplayer);
+                    $("#player1Name").html(namePlayer1);
+                    $("#player2Name").html(namePlayer2);
+                    refreshPlayerWins();
             },
         },
     });
@@ -32,6 +37,9 @@ $(function() {
                 matchNumber++;
                 // Reset the board for a new match
                 resetBoard();
+                // Toggle black row on rematch start
+                $("#player1Row").toggleClass("black");
+                $("#player2Row").toggleClass("black");
             },
             "New Game": function() {
                 $(this).dialog("close");
@@ -50,6 +58,35 @@ function newGame() {
     $("#newgame-form").dialog("open");
 }
 
-function playAgain() {
-    $("#playagain-form").dialog("open");
+function playAgain(winner) {
+    if (winner == 'Black') {
+        // Player 1 plays Black
+        if (matchNumber % 2 == 1) {
+            player1Wins++;
+        }
+        else {
+            player2Wins++;
+        }
+    }
+    // Winner is White
+    else {
+        // Player 1 plays White
+        if (matchNumber % 2 == 0) {
+            player1Wins++;
+        }
+        else {
+            player2Wins++;
+        }
+    }
+      
+    refreshPlayerWins();
+    $("#playagain-form")
+        .dialog("open");
+    $("#playagain-form")
+        .dialog('option', 'title', winner + ' Wins!');
+}
+
+function refreshPlayerWins() {
+    $("#player1Wins").html(player1Wins);
+    $("#player2Wins").html(player2Wins);
 }
