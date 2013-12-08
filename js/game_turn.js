@@ -22,8 +22,8 @@ $('.grid').click(function() {
         var x = Math.round(position.left / 50 + 1);
         var y = Math.round(position.top / 50 + 1);
         var currentPlayer;
-        console.log('turn: ' + (turnCnt + 1));
-        $("#turnCount").html(turnCnt + 1);
+        console.log('turn: ' + (turnCnt + 2));
+        $("#turnCount").html(turnCnt + 2);
         console.log('x: ' + x);
         console.log('y: ' + y);
         // If modulus of turnCnt (turn count) is = that means it's black's turn
@@ -256,7 +256,7 @@ function resetBoard() {
     // Reset turn to 0
     turnCnt = 0;
     // Reset turnCount display to 0
-    $("#turnCount").html(turnCnt);
+    $("#turnCount").html(turnCnt + 1);
 
     // Show current player stone (black always goes first)
     $("#cplayer").html(blackDiv);    

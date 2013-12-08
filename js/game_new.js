@@ -11,7 +11,10 @@ $(function() {
         width: 300,
         modal: true,
         buttons: {
-            "Start": function() {
+            "HOW TO PLAY": function() {
+                
+            },
+            "START NEW GAME": function() {
                     var namePlayer1 = $("#namePlayer1").val();
                     var namePlayer2 = $("#namePlayer2").val();
                     player1Wins = 0;
@@ -22,6 +25,16 @@ $(function() {
                     refreshPlayerWins();
             },
         },
+    });
+    $(".board").css('cursor', 'pointer');
+    
+    $(".gameButtons").css('cursor', 'pointer');
+    
+    $(".gameButtons").mousedown(function() {
+        $(this).addClass("gameButtonsInset");
+    });
+    $(".gameButtons").mouseup(function() {
+        $(this).removeClass("gameButtonsInset");
     });
     $("#playagain-form").dialog({
         autoOpen: false,
