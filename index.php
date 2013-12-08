@@ -61,15 +61,21 @@
         </table>
         <br>
         <div id='divCurrentTurn'>
-            Current Turn:
-            <span id='cplayer'>Black</span>
+            CURRENT PLAYER:<br>
+            <span class='topMargin' id='cplayer'>Black</span>
         </div>
         <div id='divTurnCount'>
-            Turn Count:<br>
+            TURN NUMBER:<br>
             <h1>
                 <span id='turnCount'>0</span>
             </h1>
         </div>
+        <div class='gameButtons' id='startNewGame'>START NEW GAME</div>
+        <br>
+        <div class='gameButtons' id='concedeRound'>CONCEDE ROUND</div>
+        <br>
+        <div class='gameButtons' id='howToPlay'>HOW TO PLAY</div>
+        <br>
     </div>
 </div>
 
