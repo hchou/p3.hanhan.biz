@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     <!-- jquery & jquery ui-->
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -60,12 +60,24 @@
             </tr>
         </table>
         <br>
-        <span id='cplayer'>Black</span>
+        <div id='divCurrentTurn'>
+            Current Turn:
+            <span id='cplayer'>Black</span>
+        </div>
+        <div id='divTurnCount'>
+            Turn Count:<br>
+            <h1>
+                <span id='turnCount'>0</span>
+            </h1>
+        </div>
     </div>
 </div>
 
 <script src="/js/game_turn.js"></script>
 
+<!--
+    Dialog box to start a New Game
+-->
 <div id="newgame-form" title="Start a New Game">
     <form>
         <fieldset>
@@ -77,9 +89,12 @@
     </form>
 </div>
 
+<!--
+    Dialog box to start a Rematch or New Game
+-->
 <div id="playagain-form">
     <form>
-        Do you want a rematch or play a new game?<br>
+        Do you want a rematch or start a new game?<br>
     </form>    
 </div>
 
