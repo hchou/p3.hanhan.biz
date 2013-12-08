@@ -69,7 +69,7 @@ function playAgain(winner) {
         }
     }
     // Winner is White
-    else {
+    else if (winner == 'White') {
         // Player 1 plays White
         if (matchNumber % 2 == 0) {
             player1Wins++;
@@ -82,8 +82,15 @@ function playAgain(winner) {
     refreshPlayerWins();
     $("#playagain-form")
         .dialog("open");
-    $("#playagain-form")
-        .dialog('option', 'title', winner + ' Wins!');
+    if (winner == 'Tie') {
+        // Do not increment playerNWins number for tied game
+        $("#playagain-form")
+            .dialog('option', 'title', 'Draw!');
+    }
+    else {
+        $("#playagain-form")
+            .dialog('option', 'title', winner + ' Wins!');
+    }
 }
 
 function refreshPlayerWins() {
