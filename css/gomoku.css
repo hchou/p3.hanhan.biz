@@ -1,5 +1,6 @@
 html {
     font-family:Arial,Helvetica,sans-serif;
+    font-size:11px;
 }
 
 table, th, td, tr {
@@ -81,6 +82,20 @@ tr.black {
 tr.white {
     background-color: white;
     color: black;
+}
+
+div.gameButtons {
+    text-align: center;
+    border-style: outset;
+    border-width: 1px;
+}
+
+div.gameButtonsInset {
+    border-style: inset;
+}
+
+.topMargin {
+    margin: 10px;
 }
 
 #player1Name {
