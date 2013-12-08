@@ -9,6 +9,13 @@ resetBoard();
 
 $('.grid').click(function() {
 
+    // If the turnCnt is 121 (stone in all boxes) the game is a Tie
+    if (turnCnt + 1 == 121) {
+        $("#turnCount").html(turnCnt + 1);
+        playAgain('Tie');
+        return;
+    }
+
     // If the box isn't already occupied by a white or black stone then proceed
     if ($(this).html() != whiteDiv && $(this).html() != blackDiv) {
         var position = $(this).position();
@@ -16,6 +23,7 @@ $('.grid').click(function() {
         var y = Math.round(position.top / 50 + 1);
         var currentPlayer;
         console.log('turn: ' + (turnCnt + 1));
+        $("#turnCount").html(turnCnt + 1);
         console.log('x: ' + x);
         console.log('y: ' + y);
         // If modulus of turnCnt (turn count) is = that means it's black's turn
@@ -247,6 +255,8 @@ function resetBoard() {
 
     // Reset turn to 0
     turnCnt = 0;
+    // Reset turnCount display to 0
+    $("#turnCount").html(turnCnt);
 
     // Show current player stone (black always goes first)
     $("#cplayer").html(blackDiv);    
