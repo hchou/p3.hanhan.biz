@@ -1,4 +1,4 @@
-a {
+html {
     font-family:Arial,Helvetica,sans-serif;
 }
 
@@ -89,4 +89,16 @@ tr.white {
 
 #player2Name {
     width: 100px;
+}
+
+#cplayer {
+    margin-top: 100px;
+}
+
+#divCurrentTurn {
+    height: 100px;
+}
+
+#divTurnCount {
+    height: 100px;
 }
