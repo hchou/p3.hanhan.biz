@@ -113,7 +113,7 @@
         The objective of the game is simple, the first player to connect
         five stones horizontally, vertically, or diagonally wins the game.
         Each player plays either Black or White stones, the player with the
-        Black stones will always have the first turn, and the two players
+        Black stones will have the first turn, and the two players
         alternate turns until one wins or the game board is out of available
         spaces resulting in a draw.  After each match, the players swap stones.
         <br>
