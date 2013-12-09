@@ -116,6 +116,15 @@
         Black stones will have the first turn, and the two players
         alternate turns until one wins or the game board is out of available
         spaces resulting in a draw.  After each match, the players swap stones.
+        <br><br>
+        START NEW GAME:<br>
+        Abandon current match and game and start anew<br>
+        <br>
+        CONCEDE ROUND:<br>
+        Concede defeat in current round and start a rematch or new game<br>
+        <br>
+        HOW TO PLAY:<br>
+        Display this how-to-play instructions<br>
         <br>
     </form>
 </div> 
