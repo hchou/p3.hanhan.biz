@@ -104,5 +104,20 @@
     </form>    
 </div>
 
+<!--
+    Dialog box with how-to-play instructions
+-->
+<div id="howtoplay-form" title="How to Play">
+    <form>
+        Gomoku is an easy game to learn and fun to play for all ages.
+        The objective of the game is simple, the first player to connect
+        five stones horizontally, vertically, or diagonally wins the game.
+        Each player plays either Black or White stones, the player with the
+        Black stones will always have the first turn, and the two players
+        alternate turns until one wins or the game board is out of available
+        spaces resulting in a draw.  After each match, the players swap stones.
+        <br>
+    </form>
+</div> 
 </body>
 </html>

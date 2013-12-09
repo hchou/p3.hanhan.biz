@@ -10,9 +10,10 @@ $(function() {
         height: 300,
         width: 300,
         modal: true,
+        draggable: false,
         buttons: {
             "HOW TO PLAY": function() {
-                
+                $("#howtoplay-form").dialog("open");
             },
             "START NEW GAME": function() {
                     var namePlayer1 = $("#namePlayer1").val();
@@ -26,6 +27,26 @@ $(function() {
             },
         },
     });
+    
+    $("#howtoplay-form").dialog({
+        autoOpen: false,
+        closeOnEscape: true,
+        dialogClass: 'no-close',
+        height: 300,
+        width: 300,
+        //modal: true,
+        draggable: false,
+        buttons: {
+            "OK": function() {
+                $("#howtoplay-form").dialog("close");
+            },
+        },
+    });
+    
+    $("#howToPlay").click(function() {
+        $("#howtoplay-form").dialog("open");
+    });
+    
     $(".board").css('cursor', 'pointer');
     
     $(".gameButtons").css('cursor', 'pointer');
@@ -69,6 +90,10 @@ $(function() {
 
 function newGame() {
     $("#newgame-form").dialog("open");
+}
+
+function howToPlay() {
+    $("#howtoplay-form").dialog("open");
 }
 
 function playAgain(winner) {

@@ -85,9 +85,11 @@ tr.white {
 }
 
 div.gameButtons {
+    background-color: #C0C0C0;
     text-align: center;
     border-style: outset;
     border-width: 1px;
+    border-radius: 5px;
 }
 
 div.gameButtonsInset {
