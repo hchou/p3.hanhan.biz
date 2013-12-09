@@ -18,6 +18,12 @@ $(function() {
             "START NEW GAME": function() {
                     var namePlayer1 = $("#namePlayer1").val();
                     var namePlayer2 = $("#namePlayer2").val();
+                    if (namePlayer1.length == 0) {
+                        namePlayer1 = 'Player 1';
+                    }
+                    if (namePlayer2.length == 0) {
+                        namePlayer2 = 'Player 2';
+                    }
                     player1Wins = 0;
                     player2Wins = 0;
                     $(this).dialog("close");
@@ -45,6 +51,23 @@ $(function() {
     
     $("#howToPlay").click(function() {
         $("#howtoplay-form").dialog("open");
+    });
+    
+    $("#startNewGame").click(function() {
+        $("#newgame-form").dialog("open"); 
+    });
+    
+    $("#concedeRound").click(function() {
+        //var turnCnt = $("#namePlayer1").val();
+        //alert(turnCnt);
+        if (turnCnt % 2 == 1) {
+            // Black concedes White Wins
+            playAgain('Black');
+        }
+        else {
+            // White concedes Black Wins
+            playAgain('White');
+        }
     });
     
     $(".board").css('cursor', 'pointer');
